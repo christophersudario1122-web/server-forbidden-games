@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terminal_Arcade_Hub — Online Shell</title>
+<meta name="theme-color" content="#00ff88">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23050508' width='100' height='100' rx='15'/><text x='50' y='68' font-size='50' text-anchor='middle'>dYZr</text></svg>">
+<style>
+  :root { --neon: #00ff88; --bg: #050508; --dim: #6f8f80; --warn: #ffb000; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; padding: 32px 20px;
+    background: var(--bg); color: var(--neon);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    line-height: 1.55;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background: repeating-linear-gradient(0deg, rgba(0,255,136,.035) 0 1px, transparent 1px 3px);
+  }
+  main { position: relative; z-index: 1; width: 100%; max-width: 760px; }
+  .term {
+    border: 1px solid rgba(0,255,136,.35); background: rgba(10,10,15,.85);
+    box-shadow: 0 0 24px rgba(0,255,136,.15), inset 0 0 40px rgba(0,255,136,.04);
+    padding: 28px;
+  }
+  .bar {
+    display: flex; align-items: center; gap: 8px; margin: -28px -28px 22px; padding: 10px 16px;
+    border-bottom: 1px solid rgba(0,255,136,.25); background: rgba(0,255,136,.05);
+    font-size: 12px; letter-spacing: .12em; color: var(--dim);
+  }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #1d3a2c; }
+  .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+  h1 { font-size: clamp(22px, 5vw, 34px); margin: 0 0 4px; letter-spacing: .04em; }
+  .sub { color: var(--dim); font-size: 13px; margin: 0 0 22px; letter-spacing: .08em; }
+  .tag {
+    display: inline-block; font-size: 11px; letter-spacing: .14em; padding: 3px 9px;
+    border: 1px solid var(--warn); color: var(--warn); margin-bottom: 18px;
+  }
+  p { font-size: 14px; color: #b8e8cf; margin: 0 0 14px; }
+  code { color: var(--neon); background: rgba(0,255,136,.08); padding: 1px 5px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 6px; }
+  a.btn {
+    flex: 1 1 210px; text-align: center; text-decoration: none;
+    padding: 14px 18px; font-weight: bold; letter-spacing: .06em; font-size: 14px;
+    border: 1px solid var(--neon); color: var(--bg); background: var(--neon);
+    transition: transform .12s, box-shadow .12s;
+  }
+  a.btn:hover { transform: translateY(-2px); box-shadow: 0 0 18px rgba(0,255,136,.5); }
+  a.btn.ghost { background: transparent; color: var(--neon); }
+  a.btn.ghost:hover { background: rgba(0,255,136,.1); }
+  .note { margin-top: 22px; padding-top: 18px; border-top: 1px dashed rgba(0,255,136,.25); font-size: 12.5px; color: var(--dim); }
+  .note b { color: #b8e8cf; }
+  footer { margin-top: 18px; font-size: 11px; color: #3f5c4f; letter-spacing: .08em; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <div class="term">
+    <div class="bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span>arcade@hub:~$ online-shell</span>
+    </div>
+
+    <h1>Terminal_Arcade_Hub</h1>
+    <p class="sub">627 offline HTML games &middot; Chromebook-ready &middot; no install</p>
+
+    <span class="tag">ONLINE SHELL &mdash; GAME FILES NOT BUNDLED</span>
+
+    <p>
+      You're viewing the <b>app shell</b> hosted on Vercel. The full game corpus is
+      <b>~5.9&nbsp;GB</b> across four archives &mdash; far beyond what Vercel's static hosting
+      allows &mdash; so the games aren't included in this deployment.
+    </p>
+    <p>
+      To play, download the game pack, extract the four parts into
+      <code>.games/pack/offline/</code> next to <code>PRESSHERETOSTART.html</code>, then open it
+      locally. The hub below will then find and launch every game.
+    </p>
+
+    <div class="btns">
+      <a class="btn" href="./PRESSHERETOSTART.html">&#9654; Open Arcade Hub</a>
+      <a class="btn ghost" href="https://github.com/christophersudario1122-web/600-game-compiled-offline-html-game-pack/releases/tag/v1.0.0" target="_blank" rel="noopener">&#8681; Download the games</a>
+      <a class="btn ghost" href="https://github.com/christophersudario1122-web/600-game-compiled-offline-html-game-pack/releases/download/v1.0.0/start-here-app.zip" target="_blank" rel="noopener">&#8681; App only</a>
+    </div>
+
+    <div class="note">
+      <b>Downloads:</b> <code>games-corpus-part1of4.zip</code> &rarr; <code>part4of4.zip</code>
+      (~5.9&nbsp;GB total), plus <code>start-here-app.zip</code>. All four parts extract into the
+      same folder. Source &amp; releases:
+      <a href="https://github.com/christophersudario1122-web/600-game-compiled-offline-html-game-pack" target="_blank" rel="noopener" style="color:#00ff88">github.com/&hellip;/600-game-compiled-offline-html-game-pack</a>.
+    </div>
+  </div>
+  <footer>ARCADE HUB &middot; ONLINE SHELL BUILD</footer>
+</main>
+</body>
+</html>

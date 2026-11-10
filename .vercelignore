@@ -1,0 +1,3 @@
+# Never upload the 7.8 GB game corpus from a local/CLI deploy.
+# (It is also gitignored, so Git-based deploys never see it.)
+.games/
